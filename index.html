@@ -234,7 +234,7 @@
                 <span class="arrow">&gt;</span>
             </a>
 
-            <a class="menu-btn" href="laporan-profil-kesling.html" target="_blank" rel="noopener noreferrer">
+            <a class="menu-btn" href="#" onclick="openProfilModal(); return false;">
                 <div class="btn-left">
                     <div class="icon-box">📊</div>
                     <span>LAPORAN PROFIL KESLING</span>
@@ -274,11 +274,29 @@
     "SPIRT": "https://drive.google.com/drive/folders/1ewWMKrLJbjpWGUspw0z5zTkzJO-vep1o?usp=drive_link"
 };
 
+        function openProfilModal(){document.getElementById('profilModal').style.display='flex';}
+        function closeProfilModal(){document.getElementById('profilModal').style.display='none';}
+        document.getElementById('profilModal').addEventListener('click',function(e){if(e.target===this)closeProfilModal();});
+
         function openLink(key) {
             const url = LINKS[key];
             if (url) window.open(url, '_blank', 'noopener,noreferrer');
         }
     
     </script>
+
+        <div id="profilModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9999;align-items:center;justify-content:center;padding:20px;">
+            <div style="width:100%;max-width:420px;background:linear-gradient(135deg,#0d5257,#083b66);border:1px solid rgba(255,255,255,.25);border-radius:24px;padding:25px;box-shadow:0 12px 35px rgba(0,0,0,.45);">
+                <h2 style="margin-bottom:8px;color:#fff;">LAPORAN PROFIL KESLING</h2>
+                <p style="font-size:13px;color:#bfdbfe;margin-bottom:20px;">Silakan pilih jenis laporan</p>
+                <a href="https://docs.google.com/spreadsheets/d/1taAQJGlqcYUPf5ULifw2VpVKw_4UU9lN/edit?usp=sharing&ouid=112438815553238365889&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="menu-btn" style="margin-bottom:12px;">
+                    <div class="btn-left"><div class="icon-box">📊</div><span>LAPORAN PROFIL KESLING</span></div><span class="arrow">&gt;</span>
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1oy2EvXb9jx1GBtCW3vdZXkWhZQ3OzpoLtxdwRcrlOCI/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="menu-btn">
+                    <div class="btn-left"><div class="icon-box">💧</div><span>LAPORAN AIR MINUM</span></div><span class="arrow">&gt;</span>
+                </a>
+                <button onclick="closeProfilModal()" style="margin-top:18px;border:0;background:transparent;color:#bfdbfe;cursor:pointer;font-size:13px;">✕ Tutup</button>
+            </div>
+        </div>
 </body>
 </html>
